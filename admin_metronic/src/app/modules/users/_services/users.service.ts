@@ -32,7 +32,7 @@ export class UsersService {
   createUser(data){
     this.isLoadingSubject.next(true);
     let headers = new HttpHeaders({'token': this.authservice.token});
-    let URL = URL_SERVICIOS + '/users/register_admin';
+    let URL = URL_SERVICIOS + '/users/register';
     return this.http.post(URL, data, {headers: headers}).pipe(
       finalize(() => this.isLoadingSubject.next(false))
     );
